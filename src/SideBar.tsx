@@ -30,7 +30,7 @@ class SideBar extends React.Component<any, any> {
           <div style={{}}>
             <h3>We like balloons</h3>
             <p>
-              You can find all kinds
+              You can find all kinds You can find all kinds You can find all kinds
             </p>
           </div>
           <div style={{ flex: 1, overflowY: "auto" }}>

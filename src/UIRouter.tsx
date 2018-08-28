@@ -23,7 +23,7 @@ class UIRouter extends React.Component<any, any> {
           // push first child always
           list.push(child);
           stop = true;
-        } else if (isWidthDown("md", this.props.width)) {
+        } else if (isWidthDown("sm", this.props.width)) {
           // let's push 2 children and ignore the 3rd
           if (ctr < 2) {
             list.push(child);

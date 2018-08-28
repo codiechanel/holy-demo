@@ -1,0 +1,160 @@
+/**
+this is important that we set this to zero
+this would prevent scroll bar appearing
+ */
+html,
+body, .viewport {
+  margin: 0px;
+  padding: 0px;
+  /*max-height: 100%;*/
+  background-color: black;
+}
+
+
+/**
+although all these entries are necessary
+the most important part is height: 100vh;
+this would limit the content to the size of the screen
+again, to prevent the scroll bars
+ */
+#root {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  height: 100vh;
+  /*height: 100%;*/
+  /*max-height: 100vh;*/
+  color: white;
+
+}
+
+/*top level*/
+.vbox {
+  display: flex;
+  flex-direction: column;
+  /*background-color: aqua;*/
+}
+
+/**
+we use min-height: 0; because in firefox
+the div scroll bar is not showing
+this is the fix for it
+ */
+.hbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+  min-height: 0;
+}
+
+/**
+we can actually remove the header/footer
+but most page designs use it
+ */
+header,
+footer {
+  height: 100px;
+  background-color: aliceblue;
+}
+
+article {
+  /*     flex: 5;*/
+  flex: 1;
+  background-color: #333333;
+  color: #cccccc;
+  overflow-y: auto;
+
+}
+
+aside
+{
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/ramp.jpg);
+  background-position: bottom left;
+  flex: 1;
+  /*height: 100vh;*/
+}
+
+
+nav {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/spike.jpg);
+  flex: 1;
+  /**
+  this may not be needed
+   */
+  /*max-width: 100%;*/
+  /*max-height: 100%;*/
+}
+
+/**
+be careful when you add a padding to a child div
+scrollbars may appear
+so be sure to compensate that by reducing the height
+by the same number of pixels...
+if you are short even by just 1 pixel, scrollbars will appear
+you can use calc vh or %
+
+however when you use reboot.css there is no need to compensate
+it is because reboot.css changes the box-sizing for all divs
+so that when you change the maring/padding of the child
+it does not affect the parent
+ */
+
+/**
+vh functions as a percentage
+10vh is 10% of viewport
+However, browsers calculate the viewport size as the browser window,
+which includes the space for the scrollbar.
+if the page extends more than the height of the viewport - which will make
+the scrollbar appear - the width of the viewport will actually be
+larger than the width of the html element.
+
+ */
+.navContent2 {
+  /*background-color: #efefef;*/
+  flex: 1;
+  display: flex;
+
+  flex-direction: column;
+  height: 100vh;
+  /*height: calc(100vh - 10px);*/
+
+  /*height: 100%;*/
+  /*height: calc(100% - 20px);*/
+  padding-bottom: 100px;
+  padding-left: 10px;
+  padding-top: 10px;
+  /*padding: 10px;*/
+  /*align-items: flex-end;*/
+  justify-content: flex-end;
+  /*background-color: #333333;*/
+}
+
+.navContent {
+  /*background-color: #efefef;*/
+  flex: 1;
+  display: flex;
+
+  flex-direction: column;
+  height: 100vh;
+
+  /*height: calc(100vh - 10px);*/
+  padding: 10px;
+  /*height: calc(100% - 10px);*/
+  /*height: 100%;*/
+
+  /*padding: 10px;*/
+  /*align-items: flex-end;*/
+  justify-content: flex-end;
+  background-color: #333333;
+
+}
+
+@media (min-width: 0px) and (max-width: 600px) {
+
+  .navContent {
+    background-color: blue;
+    width: 100vw;
+  }
+
+}

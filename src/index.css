@@ -3,13 +3,13 @@ this is important that we set this to zero
 this would prevent scroll bar appearing
  */
 html,
-body, .viewport {
+body,
+.viewport {
   margin: 0px;
   padding: 0px;
   /*max-height: 100%;*/
   background-color: black;
 }
-
 
 /**
 although all these entries are necessary
@@ -25,7 +25,6 @@ again, to prevent the scroll bars
   /*height: 100%;*/
   /*max-height: 100vh;*/
   color: white;
-
 }
 
 /*top level*/
@@ -45,7 +44,7 @@ this is the fix for it
   flex-direction: row;
   justify-content: space-between;
   flex: 1;
-  min-height: 0;
+  /*min-height: 0;*/
 }
 
 /**
@@ -64,17 +63,14 @@ article {
   background-color: #333333;
   color: #cccccc;
   overflow-y: auto;
-
 }
 
-aside
-{
+aside {
   background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/ramp.jpg);
   background-position: bottom left;
   flex: 1;
   /*height: 100vh;*/
 }
-
 
 nav {
   background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/spike.jpg);
@@ -154,15 +150,12 @@ this is the one that will limit the height of the child
   /*align-items: flex-end;*/
   /*justify-content: flex-end;*/
   background-color: #333333;
-
-
-
 }
 
 /**
-if theres just one section taking the whole page
-the div scroll bar will not be used....
-makes sense
+if theres just one section it appears that the browser scroll is active
+when in fact its still the div scroll 
+because we stretched the width to 100%
  */
 /**
 min-height: 0; is needed and the flex
@@ -179,10 +172,8 @@ min-height: 0; is needed and the flex
 }
 
 @media (min-width: 0px) and (max-width: 600px) {
-
   .navContent {
     background-color: blue;
     width: 100vw;
   }
-
 }

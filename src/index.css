@@ -28,9 +28,14 @@ again, to prevent the scroll bars
 }
 
 /*top level*/
+/**
+we need width: 100vw; to stretch the three sections to full width
+ */
 .vbox {
   display: flex;
   flex-direction: column;
+  width: 100vw;
+  height: 100vh;
   /*background-color: aqua;*/
 }
 
@@ -62,13 +67,17 @@ article {
   flex: 1;
   background-color: #333333;
   color: #cccccc;
-  overflow-y: auto;
+
+  /*overflow-y: auto;*/
 }
 
 aside {
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/ramp.jpg);
-  background-position: bottom left;
+  /*background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/ramp.jpg);*/
+  /*background-position: bottom left;*/
+  background-color: aliceblue;
   flex: 1;
+
+
   /*height: 100vh;*/
 }
 
@@ -137,6 +146,7 @@ this is the one that will limit the height of the child
   flex-direction: column;
   height: 100vh;
 
+
   /*min-height: 0;*/
 
   /*height: calc(100vh - 10px);*/
@@ -164,6 +174,7 @@ min-height: 0; is needed and the flex
   min-height: 0;
   display: flex;
   /*flex: 1;*/
+
   flex-direction: column;
   /*align-items: flex-start;*/
   /*justify-content: space-between;*/

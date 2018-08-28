@@ -12,6 +12,7 @@ import UIRouter from "./UIRouter";
 
 import store from "./MyStore";
 import SideBar from "./SideBar"
+import Contributors from "./Contributors"
 
 function App2(props: any) {
   console.log("style", style.nice);
@@ -29,13 +30,9 @@ function App2(props: any) {
             <SideBar store={store}/>
           </nav>
           <article>
-            Force full width & height. If this block is removed, the layout
-            height/length will be determined by the amount of content in the
-            page. That might result in a page which has a footer only a few
-            inches from the top of the viewport, or one which scrolls beyond the
-            viewport.
+              <Contributors store={store}/>
           </article>
-          <aside>
+          <aside >
             <div className={"navContent2"}>
               <h3>Right Hand side</h3>
               <p>You can find all kinds of balloon related things here.</p>

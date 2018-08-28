@@ -6,6 +6,29 @@ class Store {
     contributors = observable.map(new Map(), {deep: false})
     selectedRepo = observable.box(null)
 
+    getContributors(fullname) {
+        const url = `https://api.github.com/repos/${fullname}/contributors`
+        axios
+            .get(url)
+            .then(response => {
+                console.log('resp', response.data)
+                runInAction(() => {
+                    this.contributors.clear()
+
+                    for (let x of response.data) {
+                        this.contributors.set(x.login, x)
+                    }
+                })
+            })
+            .catch(function(error) {
+                // handle error
+                console.log(error)
+            })
+            .then(function() {
+                // always executed
+            })
+    }
+
     searchRepo(language, query = null) {
         let url = `https://api.github.com/search/repositories?q=stars%3A%3E1+language:${language}&sort=stars&order=desc`
         if (query) {

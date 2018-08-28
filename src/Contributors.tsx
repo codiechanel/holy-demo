@@ -6,9 +6,9 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 @observer
-class SideBar extends React.Component<any, any> {
+class Contributors extends React.Component<any, any> {
   render() {
-    let arr = this.props.store.repos.entries();
+    let arr = this.props.store.contributors.entries();
     let list: any = Array.from(arr);
 
       /**
@@ -42,13 +42,13 @@ class SideBar extends React.Component<any, any> {
                   divider
                   onClick={() => {
                       console.log("click", item[1])
-                       this.props.store.getContributors(item[1].full_name)
+                       // this.props.store.getContributors(item[1].full_name)
                       // this.props.store.searchRepo(l.title)
                   }}
                   key={item[0]}
                 >
                   <ListItemText
-                    primary={item[1].name}
+                    primary={item[1].login}
                     primaryTypographyProps={{ color: "inherit" }}
                   />
                 </ListItem>
@@ -61,4 +61,4 @@ class SideBar extends React.Component<any, any> {
   }
 }
 
-export default SideBar;
+export default Contributors;

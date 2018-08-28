@@ -130,24 +130,52 @@ larger than the width of the html element.
   /*background-color: #333333;*/
 }
 
+/**
+this needs to be flex and the height: 100vh;
+this is the one that will limit the height of the child
+ */
 .navContent {
-  /*background-color: #efefef;*/
   flex: 1;
   display: flex;
 
   flex-direction: column;
   height: 100vh;
 
+  /*min-height: 0;*/
+
   /*height: calc(100vh - 10px);*/
-  padding: 10px;
+
+  /*padding: 10px;*/
+
   /*height: calc(100% - 10px);*/
   /*height: 100%;*/
 
   /*padding: 10px;*/
   /*align-items: flex-end;*/
-  justify-content: flex-end;
+  /*justify-content: flex-end;*/
   background-color: #333333;
 
+
+
+}
+
+/**
+if theres just one section taking the whole page
+the div scroll bar will not be used....
+makes sense
+ */
+/**
+min-height: 0; is needed and the flex
+ */
+.innerNavContent {
+  min-height: 0;
+  display: flex;
+  /*flex: 1;*/
+  flex-direction: column;
+  /*align-items: flex-start;*/
+  /*justify-content: space-between;*/
+  /*height: 50vh;*/
+  /*overflow-y: auto;*/
 }
 
 @media (min-width: 0px) and (max-width: 600px) {

@@ -15,9 +15,8 @@
     "@material-ui/core": "^3.0.0",
     "@material-ui/icons": "^3.0.0",
     "@types/axios": "^0.14.0",
-    "@types/gsap": "^1.19.2",
-    "@types/react": "^16.0.38",
-    "@types/react-dom": "^16.0.4",
+    "@types/react": "^16.4.11",
+    "@types/react-dom": "^16.0.7",
     "mobx": "^5.1.0",
     "mobx-react": "^5.2.5"
   },

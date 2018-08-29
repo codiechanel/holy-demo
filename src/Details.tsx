@@ -8,7 +8,7 @@ class Details extends React.Component<any, any> {
   render() {
     console.log("render");
     let o = this.props.store.selectedContributor;
-    let content = <div>its up dude</div>;
+      let content = <aside><div>its up dude</div></aside>;
     if (o.size < 1) {
       return content;
     }
@@ -16,12 +16,12 @@ class Details extends React.Component<any, any> {
     let item = o.toJSON();
       {/*<aside>*/}
     return (
-
+        <aside>
         <div className={"navContent"}>
           <div className={"innerNavContent"}>
             <div>{item.login}</div>
           </div>
-        </div>
+        </div></aside>
 
     )
   }

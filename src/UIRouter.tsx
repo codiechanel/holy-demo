@@ -41,6 +41,10 @@ class UIRouter extends React.Component<any, any> {
           // just get first child then ignore the rest
           // push first child always
           if (routeSource) {
+              /**
+               * since we are in a small screen
+               * we only to return one child
+               */
             list.push(this.matchRoute(children, routeSource));
           } else {
             list.push(child);

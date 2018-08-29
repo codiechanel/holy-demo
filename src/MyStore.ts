@@ -52,6 +52,10 @@ class Store {
             })
     }
 
+    goBack() {
+        this.selectedRoutes.pop()
+    }
+
     selectRepo(id, route = null) {
         let item = this.repos.get(id)
         runInAction(() => {

@@ -184,7 +184,8 @@ min-height: 0; is needed and the flex
 
 @media (min-width: 0px) and (max-width: 600px) {
   .navContent {
-    background-color: blue;
+    /*background-color: blue;*/
+    /*background-image: url(/images/gradientBlue.jpg);*/
     width: 100vw;
   }
 }

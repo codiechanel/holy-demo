@@ -43,12 +43,7 @@ const theme = createMuiTheme({
     }
 })
 function App2(props: any) {
-  console.log("style", style.nice);
   store.searchRepo("javascript");
-  // if (isWidthUp('sm', props.width)) {
-  //     return <span >width up </span>
-  //
-  // }
   return (
       <JssProvider jss={jss} generateClassName={generateClassName}>
           <MuiThemeProvider theme={theme}>

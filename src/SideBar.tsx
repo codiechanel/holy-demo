@@ -45,12 +45,11 @@ class SideBar extends React.Component<any, any> {
                     button
                     divider
                     onClick={() => {
-                      console.log("click", item[1]);
                       if (isWidthDown("xs", this.props.width)) {
-                        console.log("isWidthUp", this.props.width);
+                        // console.log("isWidthUp", this.props.width);
                         this.props.store.selectRepo(item[0], "contributors");
                       } else {
-                        console.log("isWidthUp", this.props.width);
+                        // console.log("isWidthUp", this.props.width);
                         this.props.store.selectRepo(item[0]);
                       }
 

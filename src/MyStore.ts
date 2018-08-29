@@ -15,7 +15,6 @@ class Store {
             if (this.selectedRepo.size > 0) {
 
                 let item = selected.toJSON()
-                console.log('disposer', item)
                 this.contributors.clear()
                 this.getContributors(item.full_name)
             }
@@ -35,7 +34,6 @@ class Store {
         axios
             .get(url)
             .then(response => {
-                console.log('resp', response.data)
                 runInAction(() => {
                     for (let x of response.data) {
                         this.contributors.set(x.login, x)
@@ -63,7 +61,7 @@ class Store {
                 this.selectedRoutes.push(route)
             }
         })
-        console.log('selectRepo', item)
+
     }
 
     selectContributor(id, route = null) {
@@ -75,8 +73,6 @@ class Store {
             }
         })
 
-
-        console.log('selectContributor', item)
     }
 
     searchRepo(language, query = null) {
@@ -88,9 +84,6 @@ class Store {
         axios
             .get(url)
             .then(response => {
-                console.log('resp', response.data)
-
-                // handle success
                 runInAction(() => {
                     this.contributors.clear()
                     this.repos.clear()

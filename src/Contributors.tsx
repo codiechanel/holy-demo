@@ -18,6 +18,11 @@ class Contributors extends React.Component<any, any> {
     let list: any = Array.from(arr);
 
     let backButton = null;
+    let desc = `You can find all kinds You can find all kinds You can find all
+                kinds You can find all kinds You can find all kinds You can find all
+                kinds You can find all kinds You can find all kinds You can find all
+                kinds You can find all kinds You can find all kinds You can find all
+                kinds`
 
     if (isWidthDown("xs", this.props.width)) {
       /**
@@ -78,6 +83,7 @@ class Contributors extends React.Component<any, any> {
                   >
                     <ListItemText
                       primary={item[1].login}
+                      // secondary={desc}
                       primaryTypographyProps={{ color: "inherit" }}
                     />
                   </ListItem>

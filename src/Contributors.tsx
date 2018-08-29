@@ -21,7 +21,7 @@ class Contributors extends React.Component<any, any> {
         /**
          * the function of navContent is to enforce the height limit for it's
          * direct child...and to occupy the whole space from parent nav
-         */
+         */<article>
       <div className={"navContent"}>
 
 
@@ -57,7 +57,7 @@ class Contributors extends React.Component<any, any> {
             </List>
           </div>
         </div>
-      </div>
+      </div></article>
     );
   }
 }

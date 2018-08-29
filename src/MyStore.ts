@@ -5,6 +5,7 @@ class Store {
     repos = observable.map(new Map(), {deep: false})
     contributors = observable.map(new Map(), {deep: false})
     selectedRepo = observable.map(new Map(), {deep: false})
+    selectedRoutes = observable([]);
     selectedContributor = observable.map(new Map(), {deep: false})
 
     constructor() {
@@ -51,9 +52,14 @@ class Store {
             })
     }
 
-    selectRepo(id) {
+    selectRepo(id, route = null) {
         let item = this.repos.get(id)
-        this.selectedRepo.merge(item)
+        runInAction(() => {
+            this.selectedRepo.merge(item)
+            if (route) {
+                this.selectedRoutes.push(route)
+            }
+        })
         console.log('selectRepo', item)
     }
 

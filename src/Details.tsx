@@ -14,14 +14,16 @@ class Details extends React.Component<any, any> {
     }
 
     let item = o.toJSON();
-
+      {/*<aside>*/}
     return (
-      <div className={"navContent"}>
-        <div className={"innerNavContent"}>
-          <div>{item.login}</div>
+
+        <div className={"navContent"}>
+          <div className={"innerNavContent"}>
+            <div>{item.login}</div>
+          </div>
         </div>
-      </div>
-    );
+
+    )
   }
 }
 

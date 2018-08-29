@@ -11,9 +11,9 @@ import MyComponent from "./MyComponent";
 import UIRouter from "./UIRouter";
 
 import store from "./MyStore";
-import SideBar from "./SideBar"
-import Contributors from "./Contributors"
-import Details from "./Details"
+import SideBar from "./SideBar";
+import Contributors from "./Contributors";
+import Details from "./Details";
 
 function App2(props: any) {
   console.log("style", style.nice);
@@ -26,16 +26,15 @@ function App2(props: any) {
     <div className="vbox">
       {/*<header>Header</header>*/}
       <div className="hbox">
-        <UIRouter>
-          <nav>
-            <SideBar store={store}/>
-          </nav>
-          <article>
-              <Contributors store={store}/>
-          </article>
-          <aside >
+        <UIRouter store={store}>
+          {/*<nav>*/}
+            <SideBar  store={store} />
+          {/*</nav>*/}
+          {/*<article>*/}
+            <Contributors route={"contributors"} store={store} />
+          {/*</article>*/}
+          <aside>
             <Details store={store} />
-            {/*hello man*/}
           </aside>
         </UIRouter>
       </div>

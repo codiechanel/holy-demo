@@ -66,9 +66,16 @@ class Store {
         console.log('selectRepo', item)
     }
 
-    selectContributor(id) {
+    selectContributor(id, route = null) {
         let item = this.contributors.get(id)
-        this.selectedContributor.merge(item)
+        runInAction(() => {
+            this.selectedContributor.merge(item)
+            if (route) {
+                this.selectedRoutes.push(route)
+            }
+        })
+
+
         console.log('selectContributor', item)
     }
 

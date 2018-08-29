@@ -63,7 +63,7 @@ function App2(props: any) {
             <Contributors route={"contributors"} store={store} />
           {/*</article>*/}
           {/*<aside>*/}
-            <Details store={store} />
+            <Details route={"details"} store={store} />
           {/*</aside>*/}
         </UIRouter>
       </div>

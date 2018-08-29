@@ -42,6 +42,7 @@ class Contributors extends React.Component<any, any> {
                   divider
                   onClick={() => {
                       console.log("click", item[1])
+                      this.props.store.selectContributor(item[0])
                        // this.props.store.getContributors(item[1].full_name)
                       // this.props.store.searchRepo(l.title)
                   }}

@@ -13,6 +13,7 @@ import UIRouter from "./UIRouter";
 import store from "./MyStore";
 import SideBar from "./SideBar"
 import Contributors from "./Contributors"
+import Details from "./Details"
 
 function App2(props: any) {
   console.log("style", style.nice);
@@ -33,10 +34,8 @@ function App2(props: any) {
               <Contributors store={store}/>
           </article>
           <aside >
-            <div className={"navContent2"}>
-              <h3>Right Hand side</h3>
-              <p>You can find all kinds of balloon related things here.</p>
-            </div>
+            <Details store={store} />
+            {/*hello man*/}
           </aside>
         </UIRouter>
       </div>

@@ -16,6 +16,7 @@ class Store {
 
                 let item = selected.toJSON()
                 console.log('disposer', item)
+                this.contributors.clear()
                 this.getContributors(item.full_name)
             }
 
@@ -36,8 +37,6 @@ class Store {
             .then(response => {
                 console.log('resp', response.data)
                 runInAction(() => {
-                    this.contributors.clear()
-
                     for (let x of response.data) {
                         this.contributors.set(x.login, x)
                     }

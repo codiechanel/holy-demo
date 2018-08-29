@@ -3,6 +3,7 @@ import MyComponent from "./MyComponent";
 import { observer } from "mobx-react";
 import withWidth, { isWidthDown } from "@material-ui/core/withWidth";
 import * as PropTypes from "prop-types";
+import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -19,17 +20,20 @@ class Contributors extends React.Component<any, any> {
     let backButton = null;
 
     if (isWidthDown("xs", this.props.width)) {
-        /**
-         * since its xs, we can assume we are the only one on display
-         */
+      /**
+       * since its xs, we can assume we are the only one on display
+       */
       backButton = (
-        <div
+        <Button
+          style={{ margin: 5 }}
+          variant="contained"
+          color="primary"
           onClick={() => {
             this.props.store.goBack();
           }}
         >
-          hey we are on display
-        </div>
+          Back
+        </Button>
       );
     }
 

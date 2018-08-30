@@ -138,27 +138,14 @@ larger than the width of the html element.
 /**
 this needs to be flex and the height: 100vh;
 this is the one that will limit the height of the child
+this is the last css for the holy grail layout
+anything that follows wont have an impact on the height
  */
 .navContent {
   flex: 1;
   display: flex;
-
   flex-direction: column;
   height: 100vh;
-
-
-  /*min-height: 0;*/
-
-  /*height: calc(100vh - 10px);*/
-
-  /*padding: 10px;*/
-
-  /*height: calc(100% - 10px);*/
-  /*height: 100%;*/
-
-  /*padding: 10px;*/
-  /*align-items: flex-end;*/
-  /*justify-content: flex-end;*/
   background-color: #333333;
 }
 

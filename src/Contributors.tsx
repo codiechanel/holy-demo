@@ -8,6 +8,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+import Article from "./Article"
 @observer
 class Contributors extends React.Component<any, any> {
   static propTypes = {
@@ -52,8 +53,7 @@ class Contributors extends React.Component<any, any> {
       /**
        * the function of navContent is to enforce the height limit for it's
        * direct child...and to occupy the whole space from parent nav
-       */ <article>
-        <div className={"navContent"}>
+       */
           <div className={"innerNavContent"}>
             <div style={{}}>
               {backButton}
@@ -91,8 +91,6 @@ class Contributors extends React.Component<any, any> {
               </List>
             </div>
           </div>
-        </div>
-      </article>
     );
   }
 }

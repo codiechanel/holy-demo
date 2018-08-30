@@ -11,6 +11,7 @@ body,
   background-color: black;
 }
 
+
 /**
 although all these entries are necessary
 the most important part is height: 100vh;
@@ -150,23 +151,13 @@ anything that follows wont have an impact on the height
 }
 
 /**
-if theres just one section it appears that the browser scroll is active
-when in fact its still the div scroll 
-because we stretched the width to 100%
- */
-/**
-min-height: 0; is needed and the flex
+min-height: 0; for the firefox scroll
  */
 .innerNavContent {
+  margin: 10px;
   min-height: 0;
   display: flex;
-  /*flex: 1;*/
-
   flex-direction: column;
-  /*align-items: flex-start;*/
-  /*justify-content: space-between;*/
-  /*height: 50vh;*/
-  /*overflow-y: auto;*/
 }
 
 @media (min-width: 0px) and (max-width: 600px) {

@@ -12,8 +12,6 @@ class UIRouter extends React.Component<any, any> {
 
     matchRoute(children, routeSource) {
         let result = null
-        console.log('routeSource', routeSource)
-
         React.Children.forEach(children, (child: any) => {
 
             if (routeSource == child.props.route) {
@@ -26,7 +24,7 @@ class UIRouter extends React.Component<any, any> {
     render() {
         let routes = this.props.store.selectedRoutes;
         let routeSource = routes[routes.length - 1];
-        console.log('ui router', routeSource )
+        console.log('ui router routeSource', routeSource )
         // let arr = React.Children.toArray(this.props.children)
         let  viewPortSize = this.props.viewPortSize
         //

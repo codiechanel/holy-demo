@@ -9,32 +9,22 @@ class ResponsiveRouter extends React.Component<any, any> {
   static propTypes = {
     width: PropTypes.string.isRequired
   };
-  matchRoute(children, routeSource) {
-    console.log("matching with", routeSource);
-    let result = null;
-    React.Children.forEach(children, (child: any) => {
-      if (routeSource == child.props.route) {
-        result = child;
-      }
-    });
 
-    return result;
-  }
   render() {
+      console.log('ResponsiveRouter',  this.props.width )
     if (isWidthDown("xs", this.props.width)) {
       // return default first child immediately
       return this.props.children[0];
     }
-    let routes = this.props.store.selectedRoutes;
-    let routeSource = routes[routes.length - 1];
+
+    // let routes = this.props.store.selectedRoutes;
+    // let routeSource = routes[routes.length - 1];
     // console.log("routeSource", routeSource);
     let list = [];
     let children = this.props.children;
     let ctr = 0;
     let stop = false;
-    // React.Children.forEach(children, (child: any) => {
-    //   console.log("child.props.route", child.props.route);
-    // });
+
     React.Children.forEach(children, (child: any) => {
       // console.log("isWidthDown ctr", ctr);
 

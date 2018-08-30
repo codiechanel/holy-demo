@@ -69,15 +69,13 @@ class Contributors extends React.Component<any, any> {
                     divider
                     onClick={() => {
                       console.log("click", item[1]);
-                        if (isWidthDown("xs", this.props.width)) {
-                            this.props.store.selectContributor(item[0], "details");
-                        }
-                        else {
-                            this.props.store.selectContributor(item[0]);
-                        }
-
-                      // this.props.store.getContributors(item[1].full_name)
-                      // this.props.store.searchRepo(l.title)
+                        this.props.store.selectContributor(item[0], "details");
+                        // if (isWidthDown("xs", this.props.width)) {
+                        //     this.props.store.selectContributor(item[0], "details");
+                        // }
+                        // else {
+                        //     this.props.store.selectContributor(item[0]);
+                        // }
                     }}
                     key={item[0]}
                   >

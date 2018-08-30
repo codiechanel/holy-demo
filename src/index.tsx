@@ -19,8 +19,9 @@ import { create } from "jss";
 import { createGenerateClassName, jssPreset } from "@material-ui/core/styles";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import Nav from "./Nav";
-import Article from "./Article"
-import Aside from "./Aside"
+import Article from "./Article";
+import Aside from "./Aside";
+import ResponsiveRouter from "./ResponsiveRouter";
 const generateClassName = createGenerateClassName();
 const jss = create(jssPreset());
 /**
@@ -51,22 +52,28 @@ function App2(props: any) {
     <JssProvider jss={jss} generateClassName={generateClassName}>
       <MuiThemeProvider theme={theme}>
         <div className="vbox">
-          {/*<header>Header</header>*/}
           <div className="hbox">
-            <UIRouter store={store}>
-              {/*<nav>*/}
+            {/*this ui router does not need the route source*/}
+            <ResponsiveRouter store={store}>
               <Nav>
                 {/*we can add additional router here*/}
-                <SideBar store={store} />
+                <UIRouter store={store} viewPortSize="xs">
+                  <SideBar store={store} />
+                  <Contributors route={"contributors"} store={store} />
+                  <Details route={"details"} store={store} />
+                </UIRouter>
               </Nav>
-                <Article>
-              <Contributors route={"contributors"} store={store} />
-                </Article>
-            <Aside>
-              <Details route={"details"} store={store} />
-            </Aside>
+              <Article>
+                <UIRouter store={store} viewPortSize="sm">
+                  <Contributors route={"contributors"} store={store} />
+                  <Details route={"details"} store={store} />
+                </UIRouter>
+              </Article>
+              <Aside>
+                <Details route={"details"} store={store} />
+              </Aside>
               {/*</aside>*/}
-            </UIRouter>
+            </ResponsiveRouter>
           </div>
 
           {/*<footer>Footer</footer>*/}

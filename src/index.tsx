@@ -4,10 +4,6 @@ import * as style from "./style.module.css";
 import "./index.css";
 // import "./styles.css";
 
-// import style from './style.module.css'
-import { Hello } from "./Hello";
-import withWidth, { isWidthUp } from "@material-ui/core/withWidth";
-import MyComponent from "./MyComponent";
 import UIRouter from "./UIRouter";
 
 import store from "./MyStore";

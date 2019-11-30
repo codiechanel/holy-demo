@@ -67,7 +67,7 @@ class Store {
     selectContributor(id, route = null) {
         let item = this.contributors.get(id)
         runInAction(() => {
-            this.selectedContributor.merge(item)
+            this.selectedContributor.replace(item)
             if (route) {
                 this.selectedRoutes.push(route)
             }
